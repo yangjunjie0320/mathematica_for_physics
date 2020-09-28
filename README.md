@@ -1,1 +1,1 @@
-# mathematica_for_physics
+# Mathematica for Physics
