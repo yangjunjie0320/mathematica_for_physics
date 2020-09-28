@@ -10,5 +10,11 @@ do
     echo pdfname=$pdfname
     nbname=$nb_path$filename.nb
     echo nbname=$nbname
-    math_kernel -run "SetOptions[First[\$Output],FormatType->StandardForm];UsingFrontEnd[NotebookEvaluate[\"$nbname\",InsertResults->True];nb=NotebookOpen[\"$nbname\"];Export[\"$pdfname\",nb]];Exit[]"
+    math_kernel -run "SetOptions[First[\$Output],FormatType->StandardForm];
+                      UsingFrontEnd[
+                          NotebookEvaluate[\"$nbname\",InsertResults->True];
+                          nb=NotebookOpen[\"$nbname\"];
+                          Export[\"$pdfname\",nb]
+                        ];
+                      Exit[]"
 done
