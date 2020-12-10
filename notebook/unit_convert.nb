@@ -1,0 +1,380 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13170,        372]
+NotebookOptionsPosition[     11525,        335]
+NotebookOutlinePosition[     12012,        353]
+CellTagsIndexPosition[     11969,        350]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"convertToAtomicUnitMom", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"\"\<PlanckConstant\>\"", "/", "\"\<BohrRadius\>\""}]}], "]"}], 
+    "&"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"convertToAtomicUnitVel", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<BohrRadius\>\"", "*", "\"\<HartreeEnergy\>\""}], "}"}], 
+       "/", "\"\<PlanckConstant\>\""}]}], "]"}], "&"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.816556402943836*^9, 3.81655646483952*^9}},
+ CellLabel->" In[1]:=",ExpressionUUID->"153bd7ff-d803-40b6-89c6-5489eb90efe7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"eq1", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["p", "a"], "+", 
+     SubscriptBox["p", "b"]}], "\[Equal]", "0"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eq2", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      SuperscriptBox[
+       SubscriptBox["p", "a"], "2"], 
+      RowBox[{"2", " ", 
+       SubscriptBox["m", "a"]}]], " ", "+", " ", 
+     FractionBox[
+      SuperscriptBox[
+       SubscriptBox["p", "b"], "2"], 
+      RowBox[{"2", " ", 
+       SubscriptBox["m", "b"]}]]}], "==", 
+    SubscriptBox["e", "k"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sol", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"eq1", "~", "And", "~", "eq2"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["p", "a"], ",", 
+       SubscriptBox["p", "b"]}], "}"}]}], "]"}], " ", "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8165555653775673`*^9, 3.816555681441153*^9}, {
+  3.816556577384577*^9, 3.816556591106121*^9}, {3.816556670696553*^9, 
+  3.816556671714631*^9}},
+ CellLabel->" In[3]:=",ExpressionUUID->"5593053e-3a57-4c3b-ac44-9bb15bdaa732"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["p", "a"], "\[Rule]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       SqrtBox["2"], " ", 
+       SqrtBox[
+        SubscriptBox["e", "k"]], " ", 
+       SqrtBox[
+        SubscriptBox["m", "a"]], " ", 
+       SqrtBox[
+        SubscriptBox["m", "b"]]}], 
+      SqrtBox[
+       RowBox[{
+        SubscriptBox["m", "a"], "+", 
+        SubscriptBox["m", "b"]}]]]}]}], ",", 
+   RowBox[{
+    SubscriptBox["p", "b"], "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      SqrtBox["2"], " ", 
+      SqrtBox[
+       SubscriptBox["e", "k"]], " ", 
+      SqrtBox[
+       SubscriptBox["m", "a"]], " ", 
+      SqrtBox[
+       SubscriptBox["m", "b"]]}], 
+     SqrtBox[
+      RowBox[{
+       SubscriptBox["m", "a"], "+", 
+       SubscriptBox["m", "b"]}]]]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.816555636766493*^9, 3.816555681951603*^9}, {
+   3.8165565694684258`*^9, 3.816556591395865*^9}, 3.816556678340366*^9, 
+   3.816557297999681*^9, 3.816557527375741*^9},
+ CellLabel->" Out[5]=",ExpressionUUID->"fa246685-8acf-4210-9fae-5d07e427fd0a"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["e", "k"], "\[Rule]", 
+      TemplateBox[{"1.16", "\"eV\"", "electronvolts", "\"Electronvolts\""},
+       "Quantity"]}], ",", " ", 
+     RowBox[{
+      SubscriptBox["m", "a"], "->", 
+      RowBox[{
+       TemplateBox[{"\"sodium\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Element\"", ",", "\"Sodium\""}], "]"}], 
+         "\"Entity[\\\"Element\\\", \\\"Sodium\\\"]\"", "\"element\""},
+        "Entity"], "[", 
+       TemplateBox[{"\"atomic mass\"", 
+         RowBox[{"EntityProperty", "[", 
+           RowBox[{"\"Element\"", ",", "\"AtomicMass\""}], "]"}], 
+         "\"EntityProperty[\\\"Element\\\", \\\"AtomicMass\\\"]\""},
+        "EntityProperty"], "]"}]}], ",", 
+     RowBox[{
+      SubscriptBox["m", "b"], "->", 
+      RowBox[{
+       TemplateBox[{"\"chlorine\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Element\"", ",", "\"Chlorine\""}], "]"}], 
+         "\"Entity[\\\"Element\\\", \\\"Chlorine\\\"]\"", "\"element\""},
+        "Entity"], "[", 
+       TemplateBox[{"\"atomic mass\"", 
+         RowBox[{"EntityProperty", "[", 
+           RowBox[{"\"Element\"", ",", "\"AtomicMass\""}], "]"}], 
+         "\"EntityProperty[\\\"Element\\\", \\\"AtomicMass\\\"]\""},
+        "EntityProperty"], "]"}]}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8165566368405113`*^9, 3.816556657890285*^9}},
+ CellLabel->" In[6]:=",ExpressionUUID->"4fcbb1c4-a6b5-42d9-a2cf-e229deef2327"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"moms", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["p", "a"], ",", 
+      SubscriptBox["p", "b"]}], "}"}], "/.", "sol"}], "/.", 
+   "data"}]}]], "Input",
+ CellChangeTimes->{{3.8165556706634827`*^9, 3.816555762878627*^9}, {
+  3.816556153908897*^9, 3.8165561680008583`*^9}, {3.816556473301059*^9, 
+  3.816556525652197*^9}, {3.816556596836732*^9, 3.816556597711258*^9}, {
+  3.816556648973*^9, 3.8165566607235823`*^9}},
+ CellLabel->" In[7]:=",ExpressionUUID->"e8df955c-8a51-41a2-bfcc-8700f701ad44"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     RowBox[{"-", "5.688073141943675`"}], 
+     RowBox[{
+       SqrtBox["\"u\""], "\[InvisibleSpace]", 
+       SqrtBox["\"eV\""]}], 
+     "square root unified atomic mass unit square root electronvolts", 
+     RowBox[{
+       SqrtBox["\"AtomicMassUnit\""], " ", 
+       SqrtBox["\"Electronvolts\""]}]},
+    "Quantity"], ",", 
+   TemplateBox[{"5.688073141943675`", 
+     RowBox[{
+       SqrtBox["\"u\""], "\[InvisibleSpace]", 
+       SqrtBox["\"eV\""]}], 
+     "square root unified atomic mass unit square root electronvolts", 
+     RowBox[{
+       SqrtBox["\"AtomicMassUnit\""], " ", 
+       SqrtBox["\"Electronvolts\""]}]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.816556525971558*^9, 3.816556603565139*^9, 
+  3.816556680122135*^9, 3.8165572993110323`*^9, 3.816557528793684*^9},
+ CellLabel->" Out[7]=",ExpressionUUID->"ef7d8a84-05c5-4ff1-9807-47764a16b0fa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"convertToAtomicUnitMom", "[", "moms", "]"}]], "Input",
+ CellChangeTimes->{{3.8165565317830048`*^9, 3.8165565328401623`*^9}, {
+  3.816556600762364*^9, 3.8165566015348873`*^9}},
+ CellLabel->" In[8]:=",ExpressionUUID->"f91352e5-b18f-4091-b0d6-592b19f21626"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     RowBox[{"-", "7.40951909184856`"}], 
+     RowBox[{
+       StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]", 
+       "\"/\"", "\[InvisibleSpace]", 
+       StyleBox[
+        SubscriptBox["\"a\"", "0"], Italic, StripOnInput -> False]}], 
+     "Planck constants per Bohr radius", 
+     FractionBox["\"PlanckConstant\"", "\"BohrRadius\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"7.40951909184856`", 
+     RowBox[{
+       StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]", 
+       "\"/\"", "\[InvisibleSpace]", 
+       StyleBox[
+        SubscriptBox["\"a\"", "0"], Italic, StripOnInput -> False]}], 
+     "Planck constants per Bohr radius", 
+     FractionBox["\"PlanckConstant\"", "\"BohrRadius\""]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.816556533185074*^9, 3.816556605198599*^9, 
+  3.8165566801627407`*^9, 3.81655729934347*^9, 3.816557528807292*^9},
+ CellLabel->" Out[8]=",ExpressionUUID->"92c2e0a1-5eb1-41fd-a7d4-932574f64e1e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"vels", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["p", "a"], "/", 
+       SubscriptBox["m", "a"]}], ",", 
+      RowBox[{
+       SubscriptBox["p", "b"], "/", 
+       SubscriptBox["m", "b"]}]}], "}"}], "/.", "sol"}], "/.", 
+   "data"}]}]], "Input",
+ CellChangeTimes->{{3.816556513004951*^9, 3.8165565214093857`*^9}, {
+  3.816556607604822*^9, 3.8165566079262877`*^9}, {3.816556652582416*^9, 
+  3.816556661963859*^9}},
+ CellLabel->" In[9]:=",ExpressionUUID->"cf999acc-c356-458b-82d4-304ba05d6e7c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     RowBox[{"-", "0.2474175826937084`"}], 
+     RowBox[{
+       SqrtBox["\"eV\""], "\[NegativeMediumSpace]", "\"/\"", 
+       "\[InvisibleSpace]", 
+       SqrtBox["\"u\""]}], 
+     "square root electronvolts per square root unified atomic mass unit", 
+     FractionBox[
+      SqrtBox["\"Electronvolts\""], 
+      SqrtBox["\"AtomicMassUnit\""]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.16045340315779055`", 
+     RowBox[{
+       SqrtBox["\"eV\""], "\[NegativeMediumSpace]", "\"/\"", 
+       "\[InvisibleSpace]", 
+       SqrtBox["\"u\""]}], 
+     "square root electronvolts per square root unified atomic mass unit", 
+     FractionBox[
+      SqrtBox["\"Electronvolts\""], 
+      SqrtBox["\"AtomicMassUnit\""]]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.816556523052394*^9, 3.816556613866673*^9, 
+  3.816556680207129*^9, 3.816557299355454*^9, 3.816557528817713*^9},
+ CellLabel->" Out[9]=",ExpressionUUID->"01af13d3-a4c0-4a53-827a-de479416a0df"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"convertToAtomicUnitVel", "[", "vels", "]"}]], "Input",
+ CellChangeTimes->{{3.816556537711388*^9, 3.8165565384089737`*^9}, {
+  3.816556611753702*^9, 3.816556611876327*^9}},
+ CellLabel->
+  " In[10]:=",ExpressionUUID->"99d75356-5915-49ae-a1e4-beee51bc343c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    TemplateBox[{
+      RowBox[{"-", "0.006979993906187993`"}], 
+      RowBox[{
+        StyleBox[
+         SubscriptBox["\"a\"", "0"], Italic, StripOnInput -> False], 
+        "\[ThinSpace]", 
+        SubscriptBox[
+         StyleBox["\"E\"", Italic, StripOnInput -> False], "\"h\""], 
+        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+      "Bohr radius Hartree energies per Planck constant", 
+      FractionBox[
+       RowBox[{"\"BohrRadius\"", " ", "\"HartreeEnergy\""}], 
+       "\"PlanckConstant\""]},
+     "Quantity"], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{"0.00452661352550262`", 
+      RowBox[{
+        StyleBox[
+         SubscriptBox["\"a\"", "0"], Italic, StripOnInput -> False], 
+        "\[ThinSpace]", 
+        SubscriptBox[
+         StyleBox["\"E\"", Italic, StripOnInput -> False], "\"h\""], 
+        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+      "Bohr radius Hartree energies per Planck constant", 
+      FractionBox[
+       RowBox[{"\"BohrRadius\"", " ", "\"HartreeEnergy\""}], 
+       "\"PlanckConstant\""]},
+     "Quantity"], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.816556538775118*^9, 3.816556615496717*^9, 
+  3.8165566802186403`*^9, 3.81655729939154*^9, 3.816557528825747*^9},
+ CellLabel->
+  " Out[10]=",ExpressionUUID->"b082ecc1-c442-4f00-a353-b43c480e7177"]
+}, Open  ]]
+},
+WindowSize->{884, 747},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> True}, "TryRealOnly" -> False},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (March 18, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c0a48a4f-a087-40b0-9962-957a95ed7db2"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 733, 18, 52, "Input",ExpressionUUID->"153bd7ff-d803-40b6-89c6-5489eb90efe7"],
+Cell[CellGroupData[{
+Cell[1316, 42, 1196, 36, 98, "Input",ExpressionUUID->"5593053e-3a57-4c3b-ac44-9bb15bdaa732"],
+Cell[2515, 80, 1101, 37, 61, "Output",ExpressionUUID->"fa246685-8acf-4210-9fae-5d07e427fd0a"]
+}, Open  ]],
+Cell[3631, 120, 1533, 36, 40, "Input",ExpressionUUID->"4fcbb1c4-a6b5-42d9-a2cf-e229deef2327"],
+Cell[CellGroupData[{
+Cell[5189, 160, 564, 13, 30, "Input",ExpressionUUID->"e8df955c-8a51-41a2-bfcc-8700f701ad44"],
+Cell[5756, 175, 932, 24, 44, "Output",ExpressionUUID->"ef7d8a84-05c5-4ff1-9807-47764a16b0fa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6725, 204, 278, 4, 30, "Input",ExpressionUUID->"f91352e5-b18f-4091-b0d6-592b19f21626"],
+Cell[7006, 210, 1049, 24, 38, "Output",ExpressionUUID->"92c2e0a1-5eb1-41fd-a7d4-932574f64e1e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8092, 239, 580, 16, 30, "Input",ExpressionUUID->"cf999acc-c356-458b-82d4-304ba05d6e7c"],
+Cell[8675, 257, 1019, 26, 44, "Output",ExpressionUUID->"01af13d3-a4c0-4a53-827a-de479416a0df"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9731, 288, 278, 5, 30, "Input",ExpressionUUID->"99d75356-5915-49ae-a1e4-beee51bc343c"],
+Cell[10012, 295, 1497, 37, 38, "Output",ExpressionUUID->"b082ecc1-c442-4f00-a353-b43c480e7177"]
+}, Open  ]]
+}
+]
+*)
+
