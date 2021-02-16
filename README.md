@@ -2,7 +2,7 @@
 
 This project was based on topics in Dr. Kieran Mullen's course (PHYS-5013 and PHYS-5970).
 
-Thanks for the help of @yangyongkang2000[https://github.com/yangyongkang2000]
+Thanks for the help of [@yangyongkang2000](https://github.com/yangyongkang2000)
 
 ## References
 
