@@ -2,6 +2,8 @@
 
 This project was based on topics in Dr. Kieran Mullen's course (PHYS-5013 and PHYS-5970).
 
+Thanks for the help of @yangyongkang2000
+
 ## References
 
 *[1] M. Nielsen and I. Chuang, Quantum Computation and Quantum Information, Cambridge University Press, 2010*
